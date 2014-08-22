@@ -3,7 +3,9 @@
 
 In Swift, literals can be used to provide convenient shorthand initializers for any object conforming to the corresponding protocol. For example, an `NSURL` can be initialized from a string literal (`let url: NSURL = "http://example.com"`) if `NSURL` is extended to conform to the `StringLiteralConvertible` protocol (which implements `convertFromStringLiteral`).
 
-Literally is a demonstration of how Foundation framework classes can be extended to take advantage of this language feature. Best efforts have been made to find useful opportunities, while forgoing ones that could technically work, but would not yield any benefit (e.g. conforming `NSMapTable` to `DictionaryLiteralConvertible`, since it would not be able to specify storage options). **This is not recommended for usage in production code.** In time, it is expected that Cocoa and the Swift standard library will coalesce in significant ways, making this kind of adaptation irrelevant.
+Literally is a demonstration of how Foundation framework classes can be extended to take advantage of this language feature. Best efforts have been made to find useful opportunities, while forgoing ones that could technically work, but would not yield any benefit (e.g. conforming `NSMapTable` to `DictionaryLiteralConvertible`, since it would not be able to specify storage options).
+
+**This is not recommended for usage in production code.** In time, it is expected that Cocoa and the Swift standard library will coalesce in significant ways, making this kind of adaptation irrelevant.
 
 > For more information about literal convertibles in Swift, check out [this NSHipster article](http://nshipster.com/swift-literal-convertible/).
 
