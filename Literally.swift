@@ -93,9 +93,6 @@ extension NSOrderedSet: ArrayLiteralConvertible {
     }
 }
 
-let orderedSet: NSOrderedSet = ["a", "b", "c"]
-orderedSet.array
-
 // MARK: NSPredicate
 
 extension NSPredicate: StringLiteralConvertible {
