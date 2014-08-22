@@ -123,8 +123,10 @@ timeZone.secondsFromGMTForDate(NSDate())
 
 ### NSURL
 
+```swift
 let url: NSURL = "http://github.com/mattt/Literally"
 url.host!
+```
 
 ---
 
