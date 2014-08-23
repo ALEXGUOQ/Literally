@@ -90,7 +90,7 @@ let null: NSNull = nil
 ### NSPredicate
 
 ```swift
-let predicate = "value <> 'foo'"
+let predicate: NSPredicate = "value <> 'foo'"
 ```
 
 ### NSRegularExpression
