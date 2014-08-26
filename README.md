@@ -26,6 +26,10 @@ _The infrastructure and best practices for distributing Swift libraries is curre
 - `NSOrderedSet`
 - `NSSet`
 
+### IntegerLiteralConvertible
+
+- `NSColor` (OS X)
+- `UIColor` (iOS)
 
 ### NilLiteralConvertible
 
@@ -40,6 +44,7 @@ _The infrastructure and best practices for distributing Swift libraries is curre
 - `NSScanner`
 - `NSTimeZone`
 - `NSURL`
+- `UIImage` (iOS)
 
 ## Usage
 
@@ -51,6 +56,12 @@ characterSetFromArray.bitmapRepresentation
 
 let characterSetFromString: NSCharacterSet = "aeiouy"
 characterSetFromString.bitmapRepresentation
+```
+
+### NSColor
+
+```swift
+let gunmetal: NSColor = 0x292E37
 ```
 
 ### NSCountedSet
@@ -128,6 +139,18 @@ timeZone.secondsFromGMTForDate(NSDate())
 ```swift
 let url: NSURL = "http://github.com/mattt/Literally"
 url.host!
+```
+
+### UIColor
+
+```swift
+let puce: UIColor = 0x722F37
+```
+
+### UIImage
+
+```swift
+let image: UIImage = "image.png"
 ```
 
 ---

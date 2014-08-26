@@ -20,6 +20,8 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+// MARK: - Foundation -
+
 import Foundation
 
 // MARK: NSCharacterSet
@@ -170,3 +172,57 @@ extension NSURL: StringLiteralConvertible {
         return self(string: value)
     }
 }
+
+// MARK: - UIKit -
+
+#if os(iOS)
+
+import UIKit
+
+// MARK: UIColor
+
+extension UIColor: IntegerLiteralConvertible {
+    public class func convertFromIntegerLiteral(value: IntegerLiteralType) -> Self {
+        let red = CGFloat((value & 0xFF0000) >> 16) / 255.0
+        let green = CGFloat((value & 0x00FF00) >> 8) / 255.0
+        let blue = CGFloat(value & 0x0000FF) / 255.0
+        let alpha = CGFloat(1.0)
+
+        return self(red: red, green: green, blue: blue, alpha: alpha)
+    }
+}
+
+// MARK: UIImage
+
+extension UIImage: StringLiteralConvertible {
+    typealias ExtendedGraphemeClusterLiteralType = StringLiteralType
+
+    public class func convertFromExtendedGraphemeClusterLiteral(value: StringLiteralType) -> Self {
+        return self(named: value)
+    }
+
+    public class func convertFromStringLiteral(value: StringLiteralType) -> Self {
+        return self(named: value)
+    }
+}
+
+#endif
+
+// MARK: - AppKit -
+
+#if os(OSX)
+
+import Cocoa
+
+extension NSColor: IntegerLiteralConvertible {
+    public class func convertFromIntegerLiteral(value: IntegerLiteralType) -> Self {
+        let red = CGFloat((value & 0xFF0000) >> 16) / 255.0
+        let green = CGFloat((value & 0x00FF00) >> 8) / 255.0
+        let blue = CGFloat(value & 0x0000FF) / 255.0
+        let alpha = CGFloat(1.0)
+
+        return self(red: red, green: green, blue: blue, alpha: alpha)
+    }
+}
+
+#endif
