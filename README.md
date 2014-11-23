@@ -1,6 +1,8 @@
 # Literally
 *Swift Literal Convertibles for Foundation*
 
+**Changes in Swift 1.1 and its associated source mappings to Foundation have unintentionally broken the initializer patterns necessary for this project to work [[1]](https://twitter.com/jckarter/status/524387082341339136)[[2]](https://twitter.com/jckarter/status/525357491291717633). Hopefully, this will be resolved in a future release of Swift.**
+
 In Swift, literals can be used to provide convenient shorthand initializers for any object conforming to the corresponding protocol. For example, an `NSURL` can be initialized from a string literal (`let url: NSURL = "http://example.com"`) if `NSURL` is extended to conform to the `StringLiteralConvertible` protocol (which implements `convertFromStringLiteral`).
 
 Literally is a demonstration of how Foundation framework classes can be extended to take advantage of this language feature. Best efforts have been made to find useful opportunities, while forgoing ones that could technically work, but would not yield any benefit (e.g. conforming `NSMapTable` to `DictionaryLiteralConvertible`, since it would not be able to specify storage options).
